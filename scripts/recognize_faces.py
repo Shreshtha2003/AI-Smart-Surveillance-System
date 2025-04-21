@@ -137,7 +137,9 @@ while True:
 
     cv2.imshow("AI Smart Surveillance", frame)
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    key = cv2.waitKey(1) & 0xFF
+    if key == ord('q') or key == 32:  # 'q' or spacebar
+        print("[INFO] Exiting program...")
         break
 
 cap.release()
